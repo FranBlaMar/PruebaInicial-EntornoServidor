@@ -6,7 +6,6 @@ public class Persona {
 	private String nombrePersona;
 	private int edadPersona;
 	private String direccionPersona;
-
 	/*
 	 * Builder clase persona
 	 * Si es menor de edad, exception y no se crea la persona
@@ -20,7 +19,7 @@ public class Persona {
 		this.edadPersona = edad;
 		this.direccionPersona = direccion;
 	}
-
+	
 	
 	/*
 	 * Geters (Seters no, ya que no serian necesarios en dicha clase)

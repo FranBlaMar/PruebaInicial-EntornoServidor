@@ -1,4 +1,13 @@
+import java.util.ArrayList;
 import java.util.Objects;
+
+
+/*
+ * Enumerado para restringir los sectores de las empresas que se pueden registrar
+ */
+enum Sector{
+	AGRICOLA,GANADERO,TECNOLOGICO,MEDICINA;
+}
 
 public class Empresa implements Impuestos{
 
@@ -6,16 +15,18 @@ public class Empresa implements Impuestos{
 	private Persona dueñoEmpresa;
 	private double gananciasAnuales;
 	private Sector sectorDeLaEmpresa;
+	private ArrayList <Persona> trabajadores;
 	
 	/*
 	 * Builder de Empresa
 	 */
-	public Empresa(String nombre, Persona dueño, double ganancias, Sector sectorEmpresa) {
+	public Empresa(String nombre, Persona dueño, double ganancias, String sectorEmpresa) {
 		super();
 		this.nombreEmpresa = nombre;
 		this.dueñoEmpresa = dueño;
 		this.gananciasAnuales = ganancias;
-		this.sectorDeLaEmpresa = sectorEmpresa;
+		this.sectorDeLaEmpresa = Sector.valueOf(sectorEmpresa);
+		this.trabajadores = new ArrayList <Persona> ();
 	}
 	
 	
@@ -39,6 +50,13 @@ public class Empresa implements Impuestos{
 		this.gananciasAnuales = gananciasAnuales - (gananciasAnuales * 0.21);
 	}
 		
+	/*
+	 * Metodo para añadir trabajadores a la empresa
+	 */
+	public void anadirTrabajadore(Persona trabajador) {
+		this.trabajadores.add(trabajador);
+	}
+	
 	
 	
 	/*
