@@ -1,8 +1,79 @@
+import java.util.Objects;
 
-public class Empresa {
+public class Empresa implements Impuestos{
 
 	private String nombreEmpresa;
 	private Persona dueñoEmpresa;
-	private int gananciasAnuales;
-	private 
+	private double gananciasAnuales;
+	private Sector sectorDeLaEmpresa;
+	
+	/*
+	 * Builder de Empresa
+	 */
+	public Empresa(String nombre, Persona dueño, double ganancias, Sector sectorEmpresa) {
+		super();
+		this.nombreEmpresa = nombre;
+		this.dueñoEmpresa = dueño;
+		this.gananciasAnuales = ganancias;
+		this.sectorDeLaEmpresa = sectorEmpresa;
+	}
+	
+	
+	
+	//Metodos de la interfaz
+	
+	/*
+	 * Metodo de consulta de impuestos
+	 * devuelve el porcentaje de impuestos 
+	 */
+	@Override
+	public int consultarImpuestos() {
+		return 21;
+	}
+
+	/*
+	 * Metodo para realizar la reduccion de impuestos de las ganancias totales de la empresa
+	 */
+	@Override
+	public void reduccionImpuestos() {
+		this.gananciasAnuales = gananciasAnuales - (gananciasAnuales * 0.21);
+	}
+		
+	
+	
+	/*
+	 * HashCode y Equals con nombre de la empresa como identificador de la clase.
+	 */
+	@Override
+	public int hashCode() {
+		return Objects.hash(nombreEmpresa);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Empresa other = (Empresa) obj;
+		return Objects.equals(nombreEmpresa, other.nombreEmpresa);
+	}
+
+
+	/*
+	 * ToString
+	 */
+	@Override
+	public String toString() {
+		return "Nombre de la empresa: " + nombreEmpresa + ", ganancias anuales: "
+				+ gananciasAnuales + ", sector: " + sectorDeLaEmpresa + "\n Datos del dueño: \n" + dueñoEmpresa;
+	}
+
+
+	
+	
+	
+	
 }
