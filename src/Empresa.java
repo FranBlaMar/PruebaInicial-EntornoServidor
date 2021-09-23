@@ -16,7 +16,7 @@ public class Empresa implements Impuestos{
 	private double gananciasAnuales;
 	private Sector sectorDeLaEmpresa;
 	private ArrayList <Persona> trabajadores;
-	
+	private Vehiculo vehiculoEmpresa;
 	/*
 	 * Builder de Empresa
 	 */
@@ -88,10 +88,4 @@ public class Empresa implements Impuestos{
 		return "Nombre de la empresa: " + nombreEmpresa + ", ganancias anuales: "
 				+ gananciasAnuales + ", sector: " + sectorDeLaEmpresa + "\n Datos del dueño: \n" + dueñoEmpresa;
 	}
-
-
-	
-	
-	
-	
 }
