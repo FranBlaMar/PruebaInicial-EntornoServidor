@@ -5,14 +5,18 @@ public abstract class Vehiculo {
 	private String matricula;
 	private String numeroSerie;
 	
-	//Builder de vehiculo para que lo hereden los hijos
+	/*
+	 * Builder de vehiculo para que lo hereden los hijos
+	 */
 	public Vehiculo(String marca, String matricula, String numeroSerie) {
 		this.marca = marca;
 		this.matricula = matricula;
 		this.numeroSerie = numeroSerie;
 	}
 	
-	//geters
+	/*
+	 * geters
+	 */
 	public String getMarca() {
 		return marca;
 	}
@@ -24,7 +28,9 @@ public abstract class Vehiculo {
 	}
 
 
-	//HashCode y equals, con numeroSerie como parametro
+	/*
+	 * HashCode y equals, con numeroSerie como parametro
+	 */
 	@Override
 	public int hashCode() {
 		return Objects.hash(numeroSerie);
@@ -42,9 +48,11 @@ public abstract class Vehiculo {
 		return Objects.equals(numeroSerie, other.numeroSerie);
 	}
 
-	//ToString
+	/*
+	 * ToString
+	 */
 	@Override
 	public String toString() {
-		return "Vehiculo de marca: " + marca + "con matricula:" + matricula + "y numero de serie: " + numeroSerie + ".";
+		return "Vehiculo de marca: " + marca + " con matricula:" + matricula + " y numero de serie: " + numeroSerie + ".";
 	}
 }

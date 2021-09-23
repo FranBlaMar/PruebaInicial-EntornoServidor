@@ -10,7 +10,7 @@ public class Persona {
 	 * Si es menor de edad, exception y no se crea la persona
 	 */
 	public Persona(String dni, String nombre, int edad) throws Exception{
-		if (edadPersona < 18) {
+		if (edad < 18) {
 			throw new Exception ("La persona debe ser mayor de edad");
 		}
 		this.dniPersona = dni;
@@ -57,7 +57,7 @@ public class Persona {
 
 	@Override
 	public String toString() {
-		return "Nombre: " + nombrePersona + ", dni: " + dniPersona + ", edad: " + edadPersona + ".";
+		return "\nNombre: " + nombrePersona + ", dni: " + dniPersona + ", edad: " + edadPersona + ".";
 	}
 	
 	

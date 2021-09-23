@@ -5,7 +5,9 @@ public class Coche extends Vehiculo{
 	private Double caballos;
 	private LocalDate fechaITV;
 	
-	//Builder
+	/*
+	 * Builder
+	 */
 	public Coche(String marca, String matricula, String numeroSerie,Double numCaballos, String fechaDeITV) {
 		super(marca, matricula, numeroSerie);
 		this.caballos = numCaballos;

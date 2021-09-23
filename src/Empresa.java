@@ -13,20 +13,22 @@ public class Empresa implements Impuestos{
 
 	private String nombreEmpresa;
 	private Persona dueñoEmpresa;
-	private double gananciasAnuales;
+	private Double gananciasAnuales;
 	private Sector sectorDeLaEmpresa;
 	private HashSet <Persona> trabajadores;
 	private Vehiculo vehiculoEmpresa;
+	
 	/*
 	 * Builder de Empresa
 	 */
-	public Empresa(String nombre, Persona dueño, double ganancias, String sectorEmpresa) {
+	public Empresa(String nombre, Persona dueño, Double ganancias, String sectorEmpresa,Vehiculo mediotransporte) {
 		super();
 		this.nombreEmpresa = nombre;
 		this.dueñoEmpresa = dueño;
 		this.gananciasAnuales = ganancias;
 		this.sectorDeLaEmpresa = Sector.valueOf(sectorEmpresa.toUpperCase());
 		this.trabajadores = new HashSet <Persona> ();
+		this.vehiculoEmpresa = mediotransporte;
 	}
 	
 	
@@ -53,7 +55,7 @@ public class Empresa implements Impuestos{
 	/*
 	 * Metodo para añadir trabajadores a la empresa
 	 */
-	public void anadirTrabajadore(Persona trabajador) throws Exception{
+	public void anadirTrabajadores(Persona trabajador) throws Exception{
 		if (trabajador.equals(this.dueñoEmpresa)){
 			throw new Exception ("Esta persona ya está registrada como gerente de la empresa");
 		}
@@ -90,6 +92,6 @@ public class Empresa implements Impuestos{
 	@Override
 	public String toString() {
 		return "Nombre de la empresa: " + nombreEmpresa + ", ganancias anuales: "
-				+ gananciasAnuales + ", sector: " + sectorDeLaEmpresa + "\n Datos del dueño: \n" + dueñoEmpresa;
+				+ gananciasAnuales + ", sector: " + sectorDeLaEmpresa + ", Vehiculo de empresa:\n " + vehiculoEmpresa + "\nDatos del dueño:\n" + dueñoEmpresa + "\nEmpleados:\n" + trabajadores;
 	}
 }
