@@ -12,5 +12,10 @@ public class Coche extends Vehiculo{
 		this.fechaITV = LocalDate.parse(fechaDeITV);
 	}
 
+	@Override
+	public String toString() {
+		return super.toString() + "Coche con " + caballos + " caballos y fecha de ITV: " + fechaITV + ".";
+	}
+
 	
 }

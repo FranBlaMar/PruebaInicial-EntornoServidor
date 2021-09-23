@@ -8,4 +8,10 @@ public class Barco extends Vehiculo{
 		this.codigoPuerto = codigoDePuerto;
 	}
 
+	@Override
+	public String toString() {
+		return super.toString() + "Barco con codigo de puerto:" + codigoPuerto + ".";
+	}
+
+	
 }

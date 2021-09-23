@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Objects;
 
 
@@ -15,7 +15,7 @@ public class Empresa implements Impuestos{
 	private Persona dueñoEmpresa;
 	private double gananciasAnuales;
 	private Sector sectorDeLaEmpresa;
-	private ArrayList <Persona> trabajadores;
+	private HashSet <Persona> trabajadores;
 	private Vehiculo vehiculoEmpresa;
 	/*
 	 * Builder de Empresa
@@ -25,8 +25,8 @@ public class Empresa implements Impuestos{
 		this.nombreEmpresa = nombre;
 		this.dueñoEmpresa = dueño;
 		this.gananciasAnuales = ganancias;
-		this.sectorDeLaEmpresa = Sector.valueOf(sectorEmpresa);
-		this.trabajadores = new ArrayList <Persona> ();
+		this.sectorDeLaEmpresa = Sector.valueOf(sectorEmpresa.toUpperCase());
+		this.trabajadores = new HashSet <Persona> ();
 	}
 	
 	
@@ -53,8 +53,12 @@ public class Empresa implements Impuestos{
 	/*
 	 * Metodo para añadir trabajadores a la empresa
 	 */
-	public void anadirTrabajadore(Persona trabajador) {
+	public void anadirTrabajadore(Persona trabajador) throws Exception{
+		if (trabajador.equals(this.dueñoEmpresa)){
+			throw new Exception ("Esta persona ya está registrada como gerente de la empresa");
+		}
 		this.trabajadores.add(trabajador);
+			
 	}
 	
 	

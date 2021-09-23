@@ -5,19 +5,17 @@ public class Persona {
 	private String dniPersona;
 	private String nombrePersona;
 	private int edadPersona;
-	private String direccionPersona;
 	/*
 	 * Builder clase persona
 	 * Si es menor de edad, exception y no se crea la persona
 	 */
-	public Persona(String dni, String nombre, int edad, String direccion) throws Exception{
+	public Persona(String dni, String nombre, int edad) throws Exception{
 		if (edadPersona < 18) {
 			throw new Exception ("La persona debe ser mayor de edad");
 		}
 		this.dniPersona = dni;
 		this.nombrePersona = nombre;
 		this.edadPersona = edad;
-		this.direccionPersona = direccion;
 	}
 	
 	
@@ -32,9 +30,6 @@ public class Persona {
 		return edadPersona;
 	}
 
-	public String getDireccionPersona() {
-		return direccionPersona;
-	}
 	
 	public String getDniPersona() {
 		return dniPersona;
@@ -62,8 +57,7 @@ public class Persona {
 
 	@Override
 	public String toString() {
-		return "Nombre: " + nombrePersona + ", dni: " + dniPersona + ", edad: " + edadPersona + ", direccion: " 
-				+ direccionPersona + ".";
+		return "Nombre: " + nombrePersona + ", dni: " + dniPersona + ", edad: " + edadPersona + ".";
 	}
 	
 	

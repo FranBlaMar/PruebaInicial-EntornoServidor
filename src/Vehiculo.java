@@ -45,6 +45,6 @@ public abstract class Vehiculo {
 	//ToString
 	@Override
 	public String toString() {
-		return "Vehiculo de marca: " + marca + "con matricula:" + matricula + "y numero de serie: " + numeroSerie;
+		return "Vehiculo de marca: " + marca + "con matricula:" + matricula + "y numero de serie: " + numeroSerie + ".";
 	}
 }
