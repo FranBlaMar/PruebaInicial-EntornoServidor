@@ -8,6 +8,11 @@ public abstract class Vehiculo {
 	/*
 	 * Builder de vehiculo para que lo hereden los hijos
 	 */
+	/**
+	 * @param marca
+	 * @param matricula
+	 * @param numeroSerie
+	 */
 	public Vehiculo(String marca, String matricula, String numeroSerie) {
 		this.marca = marca;
 		this.matricula = matricula;

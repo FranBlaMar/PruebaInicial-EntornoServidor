@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title> Videojuegos Fran </title>
+</head>
+<body background="fondo.jpg">
+    <center>
+        <image src="logo.png" width="100" height="50"></image>
+        <font color="white"><h1>Games Fran</h1></font>
+    </center>
+    <table bgcolor="white"> 
+        <tr> 
+            <td width="750" height="0"><center><a href="indice.html">Inicio</a></center></td>
+            <td width="750"><center><a href="imagenes.html">Imagenes</a></center></td>
+            <td width="750"><center><a href="formulario.html">Suscribete</a></center></td>
+        </tr>
+    </table>
+
+    <form action="suscripcion" method="get">
+        <p>Nombre: <input type="text" name="nombre" size="30"></p>
+        <p>Sexo:
+            <input type="radio" name="hmo" value="h"> Hombre
+            <input type="radio" name="hmo" value="m"> Mujer
+            <input type="radio" name="hmo" value="o"> Otro
+        </p>
+        <p>Año de nacimiento: <input type="number" name="fechaNacimiento"></p>
+        
+        <p>Correo Electronico para recibir noticias: <input type="text" name="correo" size="50"></p>
+        <p>
+        Seleccione su ocupación:
+        <select name="Ocupacion" id="ocupacion">
+            <option value="0">Estudiante</option>
+            <option value="1">Trabajador</option>
+            <option value="2">Desempleado</option>
+        </select>
+        </p>
+        <br><br>
+        <p>
+            Comentario que quieras hacer sobre la web: <br><br><textarea name="comentario" cols="30" rows="4" placeholder="Introduzca aquí su comentario..."></textarea>
+        </p>
+        <p>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Borrar">
+        </p>
+    </form>
+</body>
+</html>
